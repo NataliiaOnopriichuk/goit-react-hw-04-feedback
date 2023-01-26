@@ -1,0 +1,13 @@
+.listBtn {
+  display: flex;
+  justify-content: center;
+  gap: 10px;
+  font-size: 18px;
+  list-style: none;
+  padding: 0;
+}
+
+.btn {
+  padding: 5px;
+  cursor: pointer;
+}
