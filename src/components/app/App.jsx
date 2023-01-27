@@ -7,22 +7,11 @@ const App = props => {
   const [good, setGood] = useState(0);
   const [neutral, setNeutral] = useState(0);
   const [bad, setBed] = useState(0);
+  const options = { good: setGood, bad: setBed, neutral: setNeutral };
 
   const addToStatisticsValue = e => {
     const { name } = e.target;
-    switch (name) {
-      case 'good':
-        setGood(good + 1);
-        break;
-      case 'neutral':
-        setNeutral(neutral + 1);
-        break;
-      case 'bad':
-        setBed(bad + 1);
-        break;
-      default:
-        return;
-    }
+    options[name](prev => prev + 1);
   };
 
   const countTotalFeedback = () => {
@@ -47,7 +36,7 @@ const App = props => {
     >
       <Section title="Please leave feedback">
         <FeedbackOptions
-          options={['good', 'neutral', 'bad']}
+          options={Object.keys(options)}
           onLeaveFeedback={addToStatisticsValue}
         />
       </Section>
