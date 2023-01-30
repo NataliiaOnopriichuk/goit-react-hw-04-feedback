@@ -9,8 +9,8 @@ const App = props => {
   const [bad, setBed] = useState(0);
   const options = { good: setGood, bad: setBed, neutral: setNeutral };
 
-  const addToStatisticsValue = e => {
-    const { name } = e.target;
+  const addToStatisticsValue = event => {
+    const { name } = event.target;
     options[name](prev => prev + 1);
   };
 

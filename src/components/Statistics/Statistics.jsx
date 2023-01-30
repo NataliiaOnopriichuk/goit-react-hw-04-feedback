@@ -1,5 +1,5 @@
 import { Notification } from '../Notification/Notification';
-import s from './Statistics.module.css';
+import css from './Statistics.module.css';
 import PropTypes from 'prop-types';
 
 export const Statistics = ({
@@ -10,7 +10,7 @@ export const Statistics = ({
   positivePercentage,
 }) => {
   return total() >= 1 ? (
-    <ul className={s.listItem}>
+    <ul className={css.listItem}>
       <li>Good: {good}</li>
       <li>Neutral: {neutral}</li>
       <li>Bad: {bad}</li>
